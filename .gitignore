@@ -1,0 +1,16 @@
+# Ignorar arquivos gerados pela IDE
+.vscode/
+.idea/
+
+# Ignorar diretórios de dependências
+/vendor/
+/node_modules/
+
+# Ignorar arquivos de log e cache
+/log/
+/tmp/
+/cache/
+
+# Ignorar arquivos de configuração de servidor
+.env
+.htaccess
