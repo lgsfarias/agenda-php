@@ -1,6 +1,12 @@
 <?php
 include_once 'config/url.php';
-include_once 'config/connection.php';
+include_once 'config/process.php';
+
+// clear session messages
+if (isset($_SESSION['msg'])) {
+  $sessionMsg = $_SESSION['msg'];
+  unset($_SESSION['msg']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
