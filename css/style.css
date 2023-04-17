@@ -1,3 +1,7 @@
+.navbar {
+  padding: 15px;
+}
+
 .navbar-brand img {
   width: 50px;
 }
@@ -74,4 +78,12 @@
 #create-form .form-group,
 #edit-form .form-group {
   margin-bottom: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  #home-link {
+    display: none;
+  }
 }
