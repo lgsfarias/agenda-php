@@ -27,7 +27,12 @@ include_once 'templates/header.php';
         <td class="actions">
           <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>" class="btn btn-success">Visualizar</a>
           <a href="<?= $BASE_URL ?>update.php?id=<?= $contact['id'] ?>" class="btn btn-primary">Editar</a>
-          <a href="#" class="btn btn-danger">Excluir</a>
+          <form action="<?= $BASE_URL ?>config/process.php" method="post" class="delete-form">
+            <input type="hidden" name="id" value="<?= $contact['id'] ?>" />
+            <input type="hidden" name="type" value="delete" />
+            <button type="submit" class="btn btn-danger"
+              onclick="return confirm('Tem certeza que deseja excluir este contato?');">Excluir</button>
+          </form>
         </td>
       </tr>
       <?php endforeach; ?>

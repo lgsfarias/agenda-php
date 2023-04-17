@@ -45,6 +45,20 @@ if (!empty($data)) {
 
     header('Location: ' . $BASE_URL . '/../index.php');
   }
+
+  if ($data['type'] == 'delete') {
+    $sql = "DELETE FROM contacts WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':id', $data['id']);
+    try {
+      $stmt->execute();
+      $_SESSION['msg'] = 'Contato excluído com sucesso!';
+    } catch (PDOException $e) {
+      $_SESSION['msg'] = 'Erro ao excluir contato!';
+    }
+
+    header('Location: ' . $BASE_URL . '/../index.php');
+  }
 } else {
 
   if (isset($_GET['id'])) {
