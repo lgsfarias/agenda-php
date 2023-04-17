@@ -62,3 +62,16 @@
   background-color: #007bff;
   color: #fff;
 }
+
+/* EDIT/CREATE CONTACT */
+
+#create-form,
+#edit-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#create-form .form-group,
+#edit-form .form-group {
+  margin-bottom: 20px;
+}
