@@ -26,7 +26,7 @@ include_once 'templates/header.php';
         <td><?= $contact['phone'] ?></td>
         <td class="actions">
           <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>" class="btn btn-success">Visualizar</a>
-          <a href="#" class="btn btn-primary">Editar</a>
+          <a href="<?= $BASE_URL ?>update.php?id=<?= $contact['id'] ?>" class="btn btn-primary">Editar</a>
           <a href="#" class="btn btn-danger">Excluir</a>
         </td>
       </tr>

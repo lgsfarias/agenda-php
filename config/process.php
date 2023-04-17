@@ -28,6 +28,23 @@ if (!empty($data)) {
 
     header('Location: ' . $BASE_URL . '/../index.php');
   }
+
+  if ($data['type'] == 'update') {
+    $sql = "UPDATE contacts SET name = :name, phone = :phone, obs = :obs WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':name', $data['name']);
+    $stmt->bindParam(':phone', $data['phone']);
+    $stmt->bindParam(':obs', $data['obs']);
+    $stmt->bindParam(':id', $data['id']);
+    try {
+      $stmt->execute();
+      $_SESSION['msg'] = 'Contato atualizado com sucesso!';
+    } catch (PDOException $e) {
+      $_SESSION['msg'] = 'Erro ao atualizar contato!';
+    }
+
+    header('Location: ' . $BASE_URL . '/../index.php');
+  }
 } else {
 
   if (isset($_GET['id'])) {
